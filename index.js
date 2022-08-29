@@ -1,13 +1,33 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  const seenNumbers = {}
+  for (let num of array){
+    let complement = target - num
+    if (seenNumbers[complement]){
+      return true
+    }
+    seenNumbers[num] = true
+  }
+  return false
 }
 
-/* 
+/*
   Write the Big O time complexity of your function here
+  O(n)
 */
 
-/* 
+/*
   Add your pseudocode here
+
+  Loop through the array
+  calculate the complement
+  if the complement is in the set, return true
+  add the number to the set
+  If it's not in the set, add it
+
+  return false
+
+
 */
 
 /*
